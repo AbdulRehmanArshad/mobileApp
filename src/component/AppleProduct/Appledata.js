@@ -1,0 +1,68 @@
+/** @format */
+
+const Appledata = [
+  {
+    id: 1,
+    tittle: "Iphone 11",
+    img: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 2,
+    tittle: "Iphone 11 Pro",
+    img: "https://images.unsplash.com/photo-1571380401583-72ca84994796?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 3,
+    tittle: "Iphone 11 Pro Max",
+    img: "https://images.unsplash.com/photo-1581795669633-91ef7c9699a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 4,
+    tittle: "Iphone 12",
+    img: "https://images.unsplash.com/photo-1607936854279-55e8a4c64888?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 5,
+    tittle: "Iphone 12 Pro",
+    img: "https://images.unsplash.com/photo-1611791485440-24e8239a0377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 6,
+    tittle: "Iphone 11",
+    img: "https://images.unsplash.com/photo-1652721367098-0ecad4cc0370?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+  {
+    id: 7,
+    tittle: "Iphone 11",
+    img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  },
+];
+export default Appledata;
