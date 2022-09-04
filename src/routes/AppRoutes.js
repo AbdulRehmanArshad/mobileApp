@@ -1,27 +1,26 @@
-/** @format */
-
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppleItems from "../container/AppleItems";
-import CartDas from "../container/CartDas";
-import CheckoutPage from "../container/CheckoutPage";
-import Dasboard from "../container/Dasboard";
-import Quickdas from "../container/quickdas/quickdas";
+import AppleItems from "../containers/apple-items";
+import CartDas from "../containers/cart-das";
+import CheckoutPage from "../containers/checkout-page";
+import Dashboard from "../containers/dashboard";
+import PageNotFound from "../containers/page-not-found";
+import QuickDas from "../containers/quick-das";
+import AppLayout from "../layout";
 
 const AppRoutes = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dasboard />} />
-          <Route path="/applemobile" element={<AppleItems />} />
-          <Route path="/cartdas" element={<CartDas />} />
-          <Route path="/cartdas/checkoutdas" element={<CheckoutPage />} />
-          <Route path="/applemobile/quickdas" element={<Quickdas />} />
-
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route exact path="/" element={<Dashboard />} />
+          <Route path="/apple-mobile" element={<AppleItems />} />
+          <Route path="/cart" element={<CartDas />} />
+          <Route path="/cart/checkoutdas" element={<CheckoutPage />} />
+          <Route path="/apple-mobile/quickdas" element={<QuickDas />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
