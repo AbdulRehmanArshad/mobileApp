@@ -11,7 +11,7 @@ const Header = () => {
 
   const setSelectedText = (txt) => {
     setText(txt);
-    setDropDown(true);
+    setDropDown(false);
   };
 
   return (
@@ -166,7 +166,7 @@ const Header = () => {
           >
             <div className='flex space-x-2'>
               <span id='s1' className={`${text.length != 0 ? "" : "hidden"} font-semibold text-sm leading-3`}>
-                Selected:{" "}
+                Selected:
               </span>
               <p
                 id='textClicked'
@@ -201,10 +201,22 @@ const Header = () => {
               } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}
             >
               <li
-                onClick={() => setSelectedText("Apple Mobiles")}
+                onClick={() => {
+                  setSelectedText("Home");
+                  setDropDown(!dropDown);
+                }}
                 className='px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal'
               >
-                Apple Mobiles
+                <Link to='/'>Home</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setSelectedText("Apple Mobiles");
+                  setDropDown(!dropDown);
+                }}
+                className='px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal'
+              >
+                <Link to='/apple-mobile'>Apple Mobiles</Link>
               </li>
             </ul>
           </div>
