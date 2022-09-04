@@ -148,7 +148,7 @@ const Cart = () => {
                               <input
                                 type='text'
                                 name='qty'
-                                value={item.quantity}
+                                value={input}
                                 className='w-12 text-center bg-gray-100 outline-none'
                                 onChange={(e) => setInput(e.target.value)}
                               />

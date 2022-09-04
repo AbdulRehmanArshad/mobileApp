@@ -1,21 +1,16 @@
-/** @format */
-
-import React, { useEffect, useState } from "react";
-import Pagination from "../../Pagination";
+import { useState } from "react";
 import Appledata from "./Appledata";
 import ReactPaginate from "react-paginate";
-import "./style.css";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
-import { slice as cartPro } from "../../store/cartProduct/index";
-import Header from "../header";
-import QuickView from "../QuickView";
+import { slice as cartPro } from "../../store/cartProduct";
 import { useNavigate } from "react-router-dom";
-import { slice as productview } from "../../store/cartProduct/index";
+import { slice as productview } from "../../store/cartProduct";
+import "./style.css";
 
 const AppleProduct = () => {
   const navigate = useNavigate();
-  const [users, setUsers] = useState(Appledata.slice(0, 100));
+  const [users] = useState(Appledata.slice(0, 100));
   const [pageNumber, setPagenumber] = useState(0);
   const [loading, setLoading] = useState(false);
 
