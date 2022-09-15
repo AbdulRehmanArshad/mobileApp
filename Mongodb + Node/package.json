@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.0"
+  },
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "my app",
+  "main": "main.js",
+  "scripts": {
+    "test": "this is my app"
+  },
+  "keywords": [
+    "abc"
+  ],
+  "author": "no",
+  "license": "ISC"
+}
