@@ -63,6 +63,22 @@ const Appledata = [
     status: "new",
     quantity: 1,
     total: 2000,
+  }, {
+    id: 8,
+    tittle: "Iphone 11",
+    img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
+  }, {
+    id: 9,
+    tittle: "Iphone 11",
+    img: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+    Price: 2000,
+    status: "new",
+    quantity: 1,
+    total: 2000,
   },
 ];
 export default Appledata;

@@ -40,11 +40,10 @@ const Header = () => {
           <ul className='hidden md:flex flex-auto align-middle'>
             <li>
               <Link
-                className={`${
-                  location.pathname === "/"
-                    ? "text-white bg-indigo-600"
-                    : "text-gray-600 border border-white bg-gray-50"
-                }  focus:outline-none focus:ring-2 focus:ring-offset-2 mr-4 focus:ring-gray-800 cursor-pointer p-4 font-normal text-xs leading-3 shadow-md rounded`}
+                className={`${location.pathname === "/"
+                  ? "text-white bg-indigo-600"
+                  : "text-gray-600 border border-white bg-gray-50"
+                  }  focus:outline-none focus:ring-2 focus:ring-offset-2 mr-4 focus:ring-gray-800 cursor-pointer p-4 font-normal text-xs leading-3 shadow-md rounded`}
                 to='/'
               >
                 Home
@@ -52,11 +51,10 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className={`${
-                  location.pathname === "/apple-mobile"
-                    ? "text-white bg-indigo-600"
-                    : "text-gray-600 border border-white bg-gray-50"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 mr-4 focus:ring-gray-800 cursor-pointer p-4 font-normal text-xs leading-3 shadow-md rounded`}
+                className={`${location.pathname === "/apple-mobile"
+                  ? "text-white bg-indigo-600"
+                  : "text-gray-600 border border-white bg-gray-50"
+                  } focus:outline-none focus:ring-2 focus:ring-offset-2 mr-4 focus:ring-gray-800 cursor-pointer p-4 font-normal text-xs leading-3 shadow-md rounded`}
                 to='/apple-mobile'
               >
                 Apple Mobile
@@ -165,7 +163,7 @@ const Header = () => {
             className='cursor-pointer px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full'
           >
             <div className='flex space-x-2'>
-              <span id='s1' className={`${text.length != 0 ? "" : "hidden"} font-semibold text-sm leading-3`}>
+              <span id='s1' className={`${text.length !== 0 ? "" : "hidden"} font-semibold text-sm leading-3`}>
                 Selected:
               </span>
               <p
@@ -196,9 +194,8 @@ const Header = () => {
           <div className=' relative'>
             <ul
               id='list'
-              className={`${
-                dropDown ? "hidden" : "block"
-              } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}
+              className={`${dropDown ? "hidden" : "block"
+                } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}
             >
               <li
                 onClick={() => {

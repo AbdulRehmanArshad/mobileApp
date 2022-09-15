@@ -8,7 +8,13 @@ const initialState = {
   minusIcon: [],
   updateIncrese: [],
   updateDecrease: [],
-  view: {}
+  view: {},
+  summary: [],
+  totalordersummary: 0,
+  bestProduct: [],
+  Quickcart: [],
+  vieworder: []
+
 };
 export const slice = createSlice({
   name: "cart",
@@ -76,7 +82,36 @@ export const slice = createSlice({
     Quickview: (state, action) => {
       state.view = action.payload
       return state
+    },
+    orderSummary: (state, action) => {
+      console.log("Hy OrderSUmary", (action.payload))
+      state.summary = action.payload
+      return state
+    },
+    totalsummary: (state, action) => {
+      state.totalordersummary = action.payload
+      return state
+    },
+    BestSellingProduct: (state, action) => {
+      let arr = state.cart;
+      arr.push(action.payload);
+      state.bestProduct = arr
+
+      return state;
+
+    },
+    allQuickvalue: (state, action) => {
+      let arr = state.cart;
+      arr.push(action.payload);
+      state.Quickcart = arr
+
+      return state;
+
+    },
+    viewOrder: (state, action) => {
+      state.vieworder = action.payload
+      return state
     }
-  },
+  }
 });
 export default slice.reducer;

@@ -1,52 +1,27 @@
 /** @format */
 
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-const CalculationCart = ({ totalvalue }) => {
+import { slice as cartsummary } from "../../store/cartProduct/index"
+import { slice as summarytotal } from "../../store/cartProduct/index"
+
+const CalculationCart = ({ totalvalue, viewSummary }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const HandleCheckout = () => {
     navigate("./checkoutdas");
+    console.log("View SUmmary", viewSummary);
+    dispatch(cartsummary.actions.orderSummary(viewSummary))
+    dispatch(summarytotal.actions.totalsummary(totalvalue))
+
+
+
   };
   return (
     <>
       <div class="container p-8 mx-auto mt-12">
-        <div class="lg:w-2/4">
-          <div class="mt-4">
-            <div class="px-4 py-4 rounded-md">
-              <label for="coupon code" class="font-semibold text-gray-600">
-                Coupon Code
-              </label>
-              <input
-                type="text"
-                placeholder="coupon code"
-                value="LARA#234"
-                class="
-                  w-full
-                  px-2
-                  py-2
-                  border border-blue-600
-                  rounded-md
-                  outline-none
-                "
-              />
-              <span class="block text-green-600">
-                Coupon code applied successfully
-              </span>
-              <button
-                class="
-                  px-6
-                  py-2
-                  mt-2
-                  text-sm text-indigo-100
-                  bg-indigo-600
-                  rounded-md
-                  hover:bg-indigo-700
-                ">
-                Apply
-              </button>
-            </div>
-          </div>
-        </div>
+
         <div class="mt-4">
           <div class="py-4 rounded-md shadow">
             <h3 class="text-xl font-bold text-blue-600">Order Summary</h3>

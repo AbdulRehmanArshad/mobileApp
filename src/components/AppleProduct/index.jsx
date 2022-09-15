@@ -1,37 +1,37 @@
-import { useState } from "react";
-import Appledata from "./Appledata";
-import ReactPaginate from "react-paginate";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
 import { slice as cartPro } from "../../store/cartProduct";
 import { useNavigate } from "react-router-dom";
 import { slice as productview } from "../../store/cartProduct";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
-
 const AppleProduct = () => {
   const navigate = useNavigate();
-  const [users] = useState(Appledata.slice(0, 100));
-  const [pageNumber, setPagenumber] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [appleapi, setAppleapi] = useState([]);
 
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const AddCartItems = (item, index) => {
+    toast.success("Your Item in Your cart", { autoClose: 1000 });
     dispatch(cartPro.actions.cartItems(item));
+
+
+
   };
   const Quickcart = (item, index) => {
     console.log("🚀 ~ file: index.jsx ~ line 31 ~ Quickcart ~ item", item);
-
+    navigate("/apple-mobile/quickdas");
     dispatch(productview.actions.Quickview(item));
 
-    navigate("/apple-mobile/quickdas");
   };
 
-  const userPerPage = 8;
-  const pagevisited = pageNumber * userPerPage;
-  const displayUser = users.slice(pagevisited, pagevisited + userPerPage).map((item, index) => {
+  const displayUser = appleapi.map((item, index) => {
     return (
       <>
-        <div className=' relative '>
+        <div className=' relative ' key={item._id}>
           <div className=' absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50 '>
             <p className='text-xs leading-3 text-gray-800'>New</p>
           </div>
@@ -51,6 +51,8 @@ const AppleProduct = () => {
             <div className=' absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100'>
               <button
                 onClick={() => AddCartItems(item, index)}
+                color="primary"
+                active={true}
                 className=' font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full'
               >
                 Add to bag
@@ -71,16 +73,22 @@ const AppleProduct = () => {
     );
   });
 
-  const pageCount = Math.ceil(users.length / userPerPage);
-  const changePage = ({ selected }) => {
-    setPagenumber(selected);
-  };
   const handleBtn = (params) => {
     setLoading(true);
   };
+  useEffect(() => {
+    setLoading(true)
+    axios.get("http://localhost:5000/appleinfo")
+      .then(res => setAppleapi(res.data))
+    setLoading(false)
 
+  }, [])
   return (
     <>
+      <ToastContainer />
+
+
+      {/* <CartSilder leftSlider={cartSliderShow} /> */}
       <div className=' 2xl:container 2xl:mx-auto'>
         <div className=' bg-gray-50 text-center lg:py-10 md:py-8 py-6'>
           <p className=' w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800'>
@@ -117,23 +125,8 @@ const AppleProduct = () => {
           </div>
         </div>
       </div>
-      <div className='2xl:container 2xl:mx-auto 	'>
-        <p className='text-sm text-gray-700 ml-20	'>
-          Showing <span className='font-medium'>1</span> to <span className='font-medium'>{userPerPage}</span>{" "}
-          of <span className='font-medium'>{users.length}</span> results
-        </p>
-      </div>
-      <ReactPaginate
-        previousLabel={"Previous"}
-        nextlabel={"Next"}
-        pageCount={pageCount}
-        onPageChange={changePage}
-        containerClassName={"paginationBttns"}
-        previousClassName={"PreviousBttns"}
-        nextLinkClassName={"nextBttn"}
-        disabledClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
-      />
+
+
       <div
         style={{
           position: "fixed",
@@ -159,5 +152,4 @@ const AppleProduct = () => {
     </>
   );
 };
-
 export default AppleProduct;
